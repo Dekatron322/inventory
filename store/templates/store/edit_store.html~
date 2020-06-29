@@ -1,0 +1,68 @@
+{% extends 'main/base.html' %}
+  
+
+{% block content %}
+	
+
+<div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Edit Store</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div id="pay-invoice">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center">Update Store</h3>
+                                        </div>
+                                        <hr>
+                                        <form novalidate="novalidate" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+                                            
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Store  Name</label>
+                                                <input id="cc-payment" value="{{ store.name }}" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Product Threshold</label>
+                                                <input id="cc-payment" value="{{ store.low_qty }}" name="low_qty" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+				                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Highest Limit</label>
+                                                <input id="cc-payment" value="{{ store.high_qty }}" name="high_qty" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+				                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Store  Description</label>
+                                                <textarea name="description" id="textarea-input" rows="9" placeholder="Content..." class="form-control">{{ store.description }}</textarea>
+                                            </div>
+                                            <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                                    <i class="fa fa-locks fa-lgs"></i>&nbsp;
+                                                    <span id="payment-button-amount">Update</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="card-body">
+                                     <a href="{% url 'store:delete_store' store.id %}" id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+										<i class="fa fa-locks fa-lgs"></i>&nbsp;
+										 <span id="payment-button-amount">Delete</span>
+									 </a>
+									</div>
+                                </div>
+
+                            </div>
+                        </div> <!-- .card -->
+
+                    </div><!--/.col-->
+
+                    
+                    
+                    
+                    
+                 </div>
+                 
+{% endblock content %}
+

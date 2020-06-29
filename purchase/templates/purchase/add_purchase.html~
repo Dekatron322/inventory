@@ -1,0 +1,86 @@
+{% extends 'main/base.html' %}
+  
+
+{% block content %}
+	
+
+<div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Register Purchase</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div id="pay-invoice">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center">Register Purchase</h3>
+                                        </div>
+                                        <hr>
+                                        <form novalidate="novalidate" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				
+                                        
+                                        	<div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Add Product(Product id)</label>
+                                               <input id="cc-payment" class="form-control" name="products" type="text" data-role="tagsinput" aria-required="true" aria-invalid="false"/>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Customer Name</label>
+                                                <input id="cc-payment" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Customer Email</label>
+                                                <input value="noemail@email.com" id="cc-payment" name="email" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Customer Phone</label>
+                                                <input id="cc-payment" name="phone" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+
+                                            <div class="form-group">                               
+                                               
+                                               
+                                            </div>
+                                            
+                      
+                                            <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                                    <i class="fa fa-locks fa-lgs"></i>&nbsp;
+                                                    <span id="payment-button-amount">Register</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- .card -->
+
+                    </div><!--/.col-->
+
+                    
+                    
+                    
+                    
+                 </div>
+                 
+                 <div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                        	<div class="container-fluid">
+                 				<p>Instructions:</p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				
+                 			</div>
+                 			</div>
+                 		</div>
+                  </div>
+                 
+{% endblock content %}
+

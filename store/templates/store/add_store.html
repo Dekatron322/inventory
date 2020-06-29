@@ -1,0 +1,133 @@
+{% extends 'main/base.html' %}
+  
+
+{% block content %}
+<style type="">
+    .card{
+    box-shadow: -1px 9px 40px -12px rgba(255,110,110,0.9);
+    }
+    .card-title{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: white !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+    .card-title1{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: #357ab7 !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+
+
+    .bttn{
+        background-color: #357ab7;
+    }
+    .bttn:hover{
+        background-color: teal;
+        color: white;
+        transition:  all 0.5s ease-in-out;
+        transform: scale(1.05);
+    }
+    .card-body{
+        background-color: #001f3f;
+        color: white;
+    }
+    .filter{
+        font-family: Rufina;
+    }
+
+</style>	
+
+<div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title1">Setup Store</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div id="pay-invoice">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center">Create Store</h3>
+                                        </div>
+                                        <hr>
+                                        <form novalidate="novalidate" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+                                            
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Store  Name</label>
+                                                <input id="cc-payment" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+                                            <div class="row form-group">
+				                                <div class="col col-md-3"><label for="select" class=" form-control-label">Product Threshold</label></div>
+				                                <div class="col-12 col-md-9">
+				                                    <select name="low_qty" id="select" class="form-control">
+				                                       <option value="0">0 qty</option>
+				                                        <option value="5">5 qty</option>
+				                                        <option value="10">10 qty</option>
+				                                        <option value="20">20 qty</option>
+				                                        <option value="50">50 qty</option>
+				                                         <option value="100">100 qty</option>
+				                                    </select>
+				                                </div>
+				                            </div>
+				                            <div class="row form-group">
+				                                <div class="col col-md-3"><label for="select" class=" form-control-label">Highest Limit</label></div>
+				                                <div class="col-12 col-md-9">
+				                                    <select name="high_qty" id="select" class="form-control">
+				                                       <option value="0">0 qty</option>
+				                                        <option value="5">5 qty</option>
+				                                        <option value="10">10 qty</option>
+				                                        <option value="20">20 qty</option>
+				                                         <option value="100">50 qty</option>
+				                                        <option value="100">100 qty</option>
+				                                    </select>
+				                                </div>
+				                            </div>
+				                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Store  Description</label>
+                                                <textarea name="description" id="textarea-input" rows="9" placeholder="Content..." class="form-control">No Description Yet</textarea>
+                                            </div>
+                                            <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg bttn btn-block">
+                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                                    <span id="payment-button-amount">Setup</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- .card -->
+
+                    </div><!--/.col-->
+
+                    
+                    
+                    
+                    
+                 </div>
+                 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="container-fluid">
+                                <p></p><br>
+                                <p></p><br>
+                                <p></p><br>
+                                <p></p><br>
+                                
+                            </div>
+                            </div>
+                        </div>
+                  </div>
+                 
+{% endblock content %}
+

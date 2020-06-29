@@ -1,0 +1,139 @@
+{% extends 'main/base.html' %}
+  
+
+{% block content %}
+	<div class="row">
+		 <div class="col-md-12">
+		      <div class="card">
+		  		 <div class="card-body">
+		  			 <div id="pay-invoice">
+	
+		<form action="#" method="post" novalidate="novalidate">
+		   	<div class="row form-group">
+				 <div class="cols col-lg-4 col-md-4 col-sm-4"><label for="select" class=" form-control-label">Select Filter</label></div>
+					 <div class="col-12s col-lg-4 col-md-4 col-sm-4">
+				           <select name="category" id="select" class="form-control">
+				             <option value="0">Please select</option>
+				                <option value="1">Option #1</option>
+				               <option value="2">Option #2</option>
+				               <option value="3">Option #3</option>
+				             </select>
+				         </div>
+				         <div class="col-12s ccol-lg-4 col-md-4 col-sm-4">
+				          <button id="payment-button" type="submit" class="btn btn-success btns btn-lgs btn-infos btn-blocks">
+						     <i class="fa fa-locks fa-lgs"></i>&nbsp;
+						         <span id="payment-button-amounts">Go</span>
+						      </button>
+				         </div>
+				    </div>
+       </form>
+       </div>
+      </div>
+     </div>
+    </div>
+       
+			 
+			 
+	</div>
+		 
+		 
+		 
+	<div class="row">
+		<div class="col-sm-12 mb-4">
+                        <div class="card-group">
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-users"></i>
+                                    </div>
+
+                                    <div class="h4 mb-0">
+                                        <span class="count">{{ products.count }}</span>
+                                    </div>
+
+                                    <small class="text-muted text-uppercase font-weight-bold">Products Available</small>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div>
+                                </div>
+                            </div>
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-users"></i>
+                                    </div>
+
+                                    <div class="h4 mb-0">
+                                        <span class="count">{{ sold_products.count }}</span>
+                                    </div>
+
+                                    <small class="text-muted text-uppercase font-weight-bold">Products Sold</small>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div>
+                                </div>
+                            </div>
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-user-plus"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        ₦<span class="count">{{ tcost_price }}</span>
+                                    </div>
+                                    <small class="text-muted text-uppercase font-weight-bold">Total Cost(Sold Products)</small>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-2" style="width: 40%; height: 5px;"></div>
+                                </div>
+                            </div>
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-cart-plus"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                       ₦<span class="count">{{ tselling_price }}</span>
+                                    </div>
+                                    <small class="text-muted text-uppercase font-weight-bold">Total Sale(Sold Products)</small>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-3" style="width: 40%; height: 5px;"></div>
+                                </div>
+                            </div>
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-pie-chart"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        ₦<span class="count">{{ tprofit }}</span>
+                                    </div>
+                                    <small class="text-muted text-uppercase font-weight-bold">Total Profit</small>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-4" style="width: 40%; height: 5px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .row -->
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                        	<div class="container-fluid">
+                 				<p>Notice:</p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 			</div>
+                 			</div>
+                 		</div>
+                  </div>
+
+{% endblock content %}
+

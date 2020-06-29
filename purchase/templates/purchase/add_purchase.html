@@ -1,0 +1,121 @@
+{% extends 'main/base.html' %}
+  
+
+{% block content %}
+<style type="">
+    .card{
+    box-shadow: -1px 9px 40px -12px rgba(255,90,90,0.9);
+    }
+    .card-title{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: white !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+    .card-title1{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: #357ab7 !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+
+    .bttn{
+        background-color: #357ab7;
+    }
+    .bttn:hover{
+        background-color: teal;
+        color: white;
+        transition:  all 0.5s ease-in-out;
+        transform: scale(1.05);
+    }
+    .card-body{
+        background-color: #001f3f;
+        color: white;
+    }
+    .filter{
+        font-family: Rufina;
+    }
+
+</style>	
+
+<div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title1">Register Purchase</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div id="pay-invoice">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center">Register Purchase</h3>
+                                        </div>
+                                        <hr>
+                                        <form novalidate="novalidate" method="post" enctype="multipart/form-data">
+				                        {% csrf_token %}
+				
+                                        
+                                        	<div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Add Product(Product id)</label>
+                                               <input id="cc-payment" class="form-control" name="products" type="text" data-role="tagsinput" aria-required="true" aria-invalid="false"/>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Customer Name</label>
+                                                <input id="cc-payment" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Customer Email</label>
+                                                <input value="noemail@email.com" id="cc-payment" name="email" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Customer Phone</label>
+                                                <input id="cc-payment" name="phone" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+
+                                            <div class="form-group">                               
+                                               
+                                               
+                                            </div>
+                                            
+                      
+                                            <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg bttn btn-block">
+                                                    <i class="fa fa-locks fa-lgs"></i>&nbsp;
+                                                    <span id="payment-button-amount">Register</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- .card -->
+
+                    </div><!--/.col-->
+
+                    
+                    
+                    
+                    
+                 </div>
+                 
+                 <div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                        	<div class="container-fluid">
+                 				<p><strong> Instructions:</strong></p>
+                 				<p>Include purchase by adding product name or i.d, customers name, customers email address and the customers phone number</p>
+                 				
+                 			</div>
+                 			</div>
+                 		</div>
+                  </div>
+                 
+{% endblock content %}
+

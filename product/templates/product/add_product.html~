@@ -1,0 +1,96 @@
+{% extends 'main/base.html' %}
+  
+
+{% block content %}
+	
+
+<div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Add Product</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div id="pay-invoice">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center">Add Product</h3>
+                                        </div>
+                                        <hr>
+                                        <form novalidate="novalidate" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+                                            
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Product  Name</label>
+                                                <input id="cc-payment" name="name" type="text" class="form-control" aria-required="trues" aria-invalid="falses" required="required">
+                                            </div>
+                                            <div class="row form-group">
+				                                <div class="col col-md-3"><label for="select" class=" form-control-label">Select Store</label></div>
+				                                <div class="col-12 col-md-9">
+				                                    <select name="store" id="select" class="form-control">
+				                                    	{% if stores %}
+				                                    		{% for store in stores %}
+								                                <option value="{{ store.id }}">{{ store.name }}</option>  
+								                             {% endfor %}
+								                             
+								                          {% else %}
+						                                    	<option value="none">No Store</option>
+				                                        {% endif %}
+				                                    </select>
+				                                </div>
+				                            </div>
+				                           <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Cost Price(₦)</label>
+                                                <input value="0" id="cc-payment" name="cost_price" type="number" class="form-control" aria-required="true" aria-invalid="false" required="required">
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Selling Price(₦)</label>
+                                                <input value="0" id="cc-payment" name="selling_price" type="number" class="form-control" aria-required="true" aria-invalid="false" required="required">
+                                            </div>
+                                            
+                                           <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Expiration Date</label>
+                                                <input id="cc-payment" name="expiry_date" type="date" class="form-control" aria-required="true" aria-invalid="false" required="required">
+                                            </div>
+                                            
+                      
+                                            <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                                    <i class="fa fa-locks fa-lgs"></i>&nbsp;
+                                                    <span id="payment-button-amount">Add</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- .card -->
+
+                    </div><!--/.col-->
+
+                    
+                    
+                    
+                    
+                 </div>
+                 
+                  <div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                        	<div class="container-fluid">
+                 				<p>Instructions:</p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				
+                 			</div>
+                 			</div>
+                 		</div>
+                  </div>
+                 
+{% endblock content %}
+

@@ -1,0 +1,95 @@
+{% extends 'main/base.html' %}
+  
+
+{% block content %}
+	
+
+<div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Setup Store</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div id="pay-invoice">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center">Create Store</h3>
+                                        </div>
+                                        <hr>
+                                        <form novalidate="novalidate" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+                                            
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Store  Name</label>
+                                                <input id="cc-payment" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+                                            <div class="row form-group">
+				                                <div class="col col-md-3"><label for="select" class=" form-control-label">Product Threshold</label></div>
+				                                <div class="col-12 col-md-9">
+				                                    <select name="low_qty" id="select" class="form-control">
+				                                       <option value="0">0 qty</option>
+				                                        <option value="5">5 qty</option>
+				                                        <option value="10">10 qty</option>
+				                                        <option value="20">20 qty</option>
+				                                        <option value="50">50 qty</option>
+				                                         <option value="100">100 qty</option>
+				                                    </select>
+				                                </div>
+				                            </div>
+				                            <div class="row form-group">
+				                                <div class="col col-md-3"><label for="select" class=" form-control-label">Highest Limit</label></div>
+				                                <div class="col-12 col-md-9">
+				                                    <select name="high_qty" id="select" class="form-control">
+				                                       <option value="0">0 qty</option>
+				                                        <option value="5">5 qty</option>
+				                                        <option value="10">10 qty</option>
+				                                        <option value="20">20 qty</option>
+				                                         <option value="100">50 qty</option>
+				                                        <option value="100">100 qty</option>
+				                                    </select>
+				                                </div>
+				                            </div>
+				                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Store  Description</label>
+                                                <textarea name="description" id="textarea-input" rows="9" placeholder="Content..." class="form-control">No Description Yet</textarea>
+                                            </div>
+                                            <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                                    <span id="payment-button-amount">Setup</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- .card -->
+
+                    </div><!--/.col-->
+
+                    
+                    
+                    
+                    
+                 </div>
+                 
+                 <div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                        	<div class="container-fluid">
+                 				<p>Instructions:</p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                 				
+                 			</div>
+                 			</div>
+                 		</div>
+                  </div>
+                 
+{% endblock content %}
+

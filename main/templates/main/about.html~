@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+  
+
+{% block content %}
+<div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">About</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div id="pay-invoice">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center">Inventory management System</h3>
+                                        </div>
+                                        <hr>
+                                        <small>
+                                        	bla bla blabla bla blabla bla blabla bla bla <br />
+                                        	bla bla blabla bla blabla bla blabla bla blabla bla bla</br />
+                                        </small>
+                                       
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- .card -->
+
+                    </div><!--/.col-->
+                    
+                    
+             </div>
+{% endblock content %}
+

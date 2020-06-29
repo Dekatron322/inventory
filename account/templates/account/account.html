@@ -1,0 +1,180 @@
+{% extends 'main/base.html' %}
+  
+
+{% block content %}
+
+<style type="">
+    .card{
+    box-shadow: -1px 9px 40px -12px rgba(255,110,110,0.9);
+    }
+    .card-title{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: white !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+    .card-title1{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: #357ab7 !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+
+    .bttn{ 
+        background-color: #357ab7;
+    }
+    .bttn:hover{
+        background-color: teal;
+        color: white;
+        transition:  all 0.5s ease-in-out;
+        transform: scale(1.05);
+    }
+    .card-body{
+        background-color: #001f3f;
+        color: white;
+    }
+    .font{
+        color: #fff;
+    }
+    .filter{
+        font-family: Rufina;
+
+    }
+
+    .count{
+        font-family: Teko;
+    }
+    .font-weight-bold{
+        font-family: Teko;
+        font-size: 15px;
+
+
+    }
+</style>
+	<div class="row">
+		 <div class="col-md-12">
+		      <div class="card">
+		  		 <div class="card-body">
+		  			 <div id="pay-invoice">
+	
+		<form action="#" method="post" novalidate="novalidate">
+		   	<div class="row form-group">
+				 <div class="cols col-lg-4 col-md-4 col-sm-4"><label for="select" class=" form-control-label filter">Select Filter</label></div>
+					 <div class="col-12s col-lg-4 col-md-4 col-sm-4">
+				           <select name="category" id="select" class="form-control">
+				             <option value="0">Please select</option>
+				                <option value="1">Option #1</option>
+				               <option value="2">Option #2</option>
+				               <option value="3">Option #3</option>
+				             </select>
+				         </div>
+				         <div class="col-12s ccol-lg-4 col-md-4 col-sm-4">
+				          <button id="payment-button" type="submit" class="btn bttn btns btn-lgs btn-infos btn-blocks">
+						     <i class="fa fa-locks fa-lgs"></i>&nbsp;
+						         <span id="payment-button-amounts">Go</span>
+						      </button>
+				         </div>
+				    </div>
+       </form>
+       </div>
+      </div>
+     </div>
+    </div>
+       
+			 
+			 
+	</div>
+		 
+		 
+		 
+	<div class="row">
+		<div class="col-sm-12 mb-4">
+                        <div class="card-group">
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-users font"></i>
+                                    </div>
+
+                                    <div class="h4 mb-0">
+                                        <span class="count">{{ products.count }}</span>
+                                    </div>
+
+                                    <small class="text-muted text-uppercase font-weight-bold">Products Available</small>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div>
+                                </div>
+                            </div>
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-users font"></i>
+                                    </div>
+
+                                    <div class="h4 mb-0">
+                                        <span class="count">{{ sold_products.count }}</span>
+                                    </div>
+
+                                    <small class="text-muted text-uppercase font-weight-bold">Products Sold</small>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div>
+                                </div>
+                            </div>
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-user-plus font"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        ₦<span class="count">{{ tcost_price }}</span>
+                                    </div>
+                                    <small class="text-muted text-uppercase font-weight-bold">Total Cost(Sold Products)</small>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-2" style="width: 40%; height: 5px;"></div>
+                                </div>
+                            </div>
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-cart-plus font"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                       ₦<span class="count">{{ tselling_price }}</span>
+                                    </div>
+                                    <small class="text-muted text-uppercase font-weight-bold">Total Sale(Sold Products)</small>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-3" style="width: 40%; height: 5px;"></div>
+                                </div>
+                            </div>
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-pie-chart font"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        ₦<span class="count">{{ tprofit }}</span>
+                                    </div>
+                                    <small class="text-muted text-uppercase font-weight-bold">Total Profit</small>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-4" style="width: 40%; height: 5px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .row -->
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                        	<div class="container-fluid">
+                 				<p></p><br>
+                                <p></p><br>
+                                <p></p><br>
+                                <p></p><br>
+                 				
+                 			</div>
+                 			</div>
+                 		</div>
+                  </div>
+
+{% endblock content %}
+

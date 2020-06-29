@@ -1,0 +1,82 @@
+{% extends 'main/base.html' %}
+  
+
+{% block content %}
+<style type="">
+    .card{
+    box-shadow: -1px 9px 40px -12px rgba(255,110,110,0.9);
+    }
+    .card-title{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: #fff !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+    .card-title1{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: #357ab7 !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+
+
+    .bttn{
+        background-color: #357ab7;
+    }
+    .bttn:hover{
+        background-color: teal;
+        color: white;
+        transition:  all 0.5s ease-in-out;
+        transform: scale(1.05);
+    }
+    .card-body{
+        background-color: #001f3f;
+        color: #001f3f;
+    }
+    .card-body i{
+        color: #001f3f;
+    }
+    .text{
+       background-color: #001f3f;
+       color: #fff;
+        font-family: Rufina;
+        font-size: 18px;
+    }
+
+    .filter{
+        font-family: Rufina;
+    }
+    </style>
+<div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title1">About</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div id="pay-invoice">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center">Inventory management System</h3>
+                                        </div>
+                                        <hr>
+                                        <p class="text text-center">
+                                        product “RedRock Inventory Management System is a cloud based software which provide a suite of tools to help businesses control their inventory processes. It is used for adding products/inventory to a store, tracking inventory levels, orders, sales, financial reports and deliveries. Join over 2000 businesses using RedRock IMS and avoid product overstock and outages, and organize inventory data.
+                                       </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- .card -->
+
+                    </div><!--/.col-->
+                    
+                    
+             </div>
+{% endblock content %}
+

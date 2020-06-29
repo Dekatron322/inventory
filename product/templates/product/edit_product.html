@@ -1,0 +1,133 @@
+{% extends 'main/base.html' %}
+  
+
+{% block content %}
+<style type="">
+    .card{
+    box-shadow: -1px 9px 40px -12px rgba(255,110,110,0.9);
+    }
+    .card-title{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: white !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+
+    .bttn{
+        background-color: #357ab7;
+    }
+    .bttn1{
+        background-color: #ED5565;
+        color: white;
+    }
+    .bttn1:hover{
+        background-color: #ED5565;
+        color: white;
+        transition:  all 0.5s ease-in-out;
+        transform: scale(1.05);
+    }
+    .bttn:hover{
+        background-color: teal;
+        color: white;
+        transition:  all 0.5s ease-in-out;
+        transform: scale(1.05);
+    }
+    .card-body{
+        background-color: #001f3f;
+        color: white;
+    }
+    .card-title1{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: #357ab7 !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+
+</style>
+	
+
+<div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title1">Edit Product</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div id="pay-invoice">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center">EditProduct</h3>
+                                        </div>
+                                        <hr>
+                                        <form novalidate="novalidate"method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+                                            
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Product  Name</label>
+                                                <input id="cc-payment" value="{{ product.name }}" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+                                            <div class="row form-group">
+				                                <div class="col col-md-3"><label for="select" class=" form-control-label">Select Store</label></div>
+				                                <div class="col-12 col-md-9">
+				                                    <select name="store" id="select" class="form-control">
+				                                    	{% if stores %}
+				                                    		{% for store in stores %}
+								                                <option value="{{ store }}">{{ store }}</option>  
+								                             {% endfor %}
+								                             
+								                          {% else %}
+						                                    	<option value="0">Please select</option>
+				                                        {% endif %}
+				                                    </select>
+				                                </div>
+				                            </div>
+				                           <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Cost Price(₦)</label>
+                                                <input id="cc-payment" value="{{ product.cost_price }}" name="cost_price" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Selling Price(₦)</label>
+                                                <input id="cc-payment" value="{{ product.selling_price }}" name="selling_price" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+                                            
+                                           <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Expiration Date</label>
+                                                <input id="cc-payment" value="{{ product.expiry_date }}" name="expiry_date" type="date" class="form-control" aria-required="true" aria-invalid="false">
+                                            </div>
+                                            
+                      
+                                            <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg bttn btn-block">
+                                                    <i class="fa fa-locks fa-lgs"></i>&nbsp;
+                                                    <span id="payment-button-amount">Update</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="card-body">
+                                     <a href="{% url 'product:delete_product' product.id %}" id="payment-button" type="submit" class="btn btn-lg bttn1 btn-block">
+										<i class="fa fa-locks fa-lgs"></i>&nbsp;
+										 <span id="payment-button-amount">Delete</span>
+									 </a>
+									</div>
+                                </div>
+
+                            </div>
+                        </div> <!-- .card -->
+
+                    </div><!--/.col-->
+
+                    
+                    
+                    
+                    
+                 </div>
+                 
+{% endblock content %}
+

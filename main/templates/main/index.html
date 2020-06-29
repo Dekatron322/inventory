@@ -1,0 +1,158 @@
+{% extends 'main/base.html' %}
+
+  
+
+{% block content %}
+<style type="">
+    .card{
+    box-shadow: -1px 9px 40px -12px rgba(255,110,110,0.9);
+    }
+    .card-title{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: #001f3f !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+    .card-title1{
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-family: Patua One;
+        font-weight: 300;
+        color: #357ab7 !important;
+        text-shadow: 6px 6px 6px #c9c6c6;
+    }
+    .teko{
+        font-family: Teko;
+        color: #001f3f;
+    }
+
+    .bttn{
+        background-color: #357ab7;
+    }
+    .bttn:hover{
+        background-color: teal;
+        color: white;
+        transition:  all 0.5s ease-in-out;
+        transform: scale(1.05);
+    }
+    .card-body{
+        color: #001f3f;
+    }
+    .card:hover{
+        transform: scale(1.03) !important;
+        transition:  all 0.5s ease-in-out;
+    }
+    .card-body i{
+        
+        color: #001f3f;
+    }
+    .filter{
+        font-family: Rufina;
+    }
+    </style>	
+	 <!-- /Widgets -->
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white bg-flat-color-1">
+                            <div class="card-body">
+                                <div class="card-left pt-1 float-left">
+                                    <h3 class="mb-0 fw-r">
+                                        <span class="currency float-left mr-1"></span>
+                                        <span class="count">{{ products.count }}</span>
+                                    </h3>
+                                    <p class="text-light mt-1 m-0">Product(s)</p>
+                                </div><!-- /.card-left -->
+
+                                <div class="card-right float-right text-right">
+                                    <i class="icon fade-5 icon-lg pe-7s-cart"></i>
+                                </div><!-- /.card-right -->
+                                
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--/.col--> 
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white bg-flat-color-6">
+                            <div class="card-body">
+                                <div class="card-left pt-1 float-left">
+                                    <h3 class="mb-0 fw-r">
+                                        <span class="count float-left">{{ stores.count }}</span>
+                                        <span>.</span>
+                                    </h3>
+                                    <p class="text-light mt-1 m-0">Store(s)</p>
+                                </div><!-- /.card-left -->
+
+                                <div class="card-right float-right text-right">
+                                    <div id="flotBar1" class="flotBar1"></div>
+                                </div><!-- /.card-right -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--/.col-->
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white bg-flat-color-3">
+                            <div class="card-body">
+                                <div class="card-left pt-1 float-left">
+                                    <h3 class="mb-0 fw-r">
+                                        <span class="count">{{ customers.count }}</span>
+                                    </h3>
+                                    <p class="text-light mt-1 m-0">Customer(s)</p>
+                                </div><!-- /.card-left -->
+
+                                <div class="card-right float-right text-right">
+                                    <i class="icon fade-5 icon-lg pe-7s-users"></i>
+                                </div><!-- /.card-right -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--/.col-->
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card text-white bg-flat-color-2">
+                            <div class="card-body">
+                                <div class="card-left pt-1 float-left">
+                                    <h3 class="mb-0 fw-r">
+                                        <span class="count">{{ purchases.count }}</span>
+                                    </h3>
+                                    <p class="text-light mt-1 m-0">Purchase(s)</p>
+                                </div><!-- /.card-left -->
+
+                                <div class="card-right float-right text-right">
+                                    <div id="flotLine1" class="flotLine1"></div>
+                                </div><!-- /.card-right -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--/.col-->
+                </div>
+                <!-- /Widgets -->
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                        	<div class="container-fluid">
+                 				<p>Notice:</p>
+                 				<p><strong>Products:</strong>Indicates the total products in the store </p>
+                 				<p><strong>Store:</strong>Shows the total number of store setups made</p>
+                 				<p><strong>Customers:</strong>Shows the total number of customers </p>
+                 				<p><strong>Prochases:</strong>Shows all purchases made</p>
+                 				
+                 			</div>
+                 			</div>
+                 		</div>
+                  </div>
+                
+                
+{% endblock content %}
